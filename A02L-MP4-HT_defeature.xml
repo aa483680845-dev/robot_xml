@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<mujoco model="A02L-MP4-HT_defeature">
+  <compiler angle="radian" meshdir="meshes/" autolimits="true"/>
+  <option integrator="implicitfast"/>
+  <default>
+    <joint damping="0.1" armature="0.01"/>
+    <geom contype="1" conaffinity="1"/>
+  </default>
+  <asset>
+
+    <material name="black"     rgba="0.033 0.033 0.033 1" specular="0.1" shininess="0.1" reflectance="0"/>
+    <material name="jointgray" rgba="0.278 0.278 0.278 1" specular="0.1" shininess="0.1" reflectance="0"/>
+    <material name="linkgray"  rgba="0.72 0.72 0.72 1"   specular="0.15" shininess="0.12" reflectance="0"/>
+    <material name="urblue"    rgba="0.22 0.42 0.65 1"   specular="0.15" shininess="0.12" reflectance="0"/>
+    
+    <mesh name="base_link" file="base_link.STL"/>
+    <mesh name="link_1" file="link_1.STL"/>
+    <mesh name="link_2" file="link_2.STL"/>
+    <mesh name="link_3" file="link_3.STL"/>
+    <mesh name="link_4" file="link_4.STL"/>
+    <mesh name="link_5" file="link_5.STL"/>
+    <mesh name="link_6" file="link_6.STL"/>
+    <mesh name="link_7" file="link_7.STL"/>
+    <mesh name="tool_link" file="tool_link.STL"/>
+  </asset>
+  <worldbody>
+    <light pos="0 0 3" dir="0 0 -1" diffuse="0.8 0.8 0.8"/>
+    <body name="base_link" pos="0 0 0">
+      <inertial pos="9.543221631e-05 0.0006061456325 0.06887505259" mass="2.274218077" fullinertia="0.007538392306 0.007363481039 0.005679315086 -6.453638398e-08 1.0819055e-05 -4.863869237e-06"/>
+      <geom name="base_link_visual" type="mesh" mesh="base_link" contype="0" conaffinity="0" group="1" material="linkgray"/>
+      <geom name="base_link_collision" type="mesh" mesh="base_link" group="3" rgba="0.5 0.6 0.7 0.3"/>
+      <body name="link_1" pos="-0.00016498 4.6712e-05 0.1542">
+        <inertial pos="2.651219785e-07 0.008742930967 0.1260948085" mass="2.714529976" fullinertia="0.01851678442 0.01879451818 0.004730990867 2.145269071e-08 8.338510135e-08 -0.001398144691"/>
+        <joint name="joint_1" type="hinge" pos="0 0 0" axis="0 0 -1" range="-3.14 3.14" limited="true"/>
+        <geom name="link_1_visual" type="mesh" mesh="link_1" contype="0" conaffinity="0" group="1" material="urblue"/>
+        <geom name="link_1_collision" type="mesh" mesh="link_1" group="3" rgba="0.5 0.6 0.7 0.3"/>
+        <body name="link_2" pos="0.00037978 -0.0297 0.2104" euler="1.5708 0 0">
+          <inertial pos="1.323206707e-07 0.06960504076 0.03925760995" mass="2.149136276" fullinertia="0.01327908992 0.002990029592 0.01369768894 -2.554995531e-08 5.169179882e-09 0.0004500972948"/>
+          <joint name="joint_2" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.14 3.14" limited="true"/>
+          <geom name="link_2_visual" type="mesh" mesh="link_2" contype="0" conaffinity="0" group="1" material="jointgray"/>
+          <geom name="link_2_collision" type="mesh" mesh="link_2" group="3" rgba="0.5 0.6 0.7 0.3"/>
+          <body name="link_3" pos="-1.1281e-05 0.2047 0.034739" euler="-1.5708 0 0">
+            <inertial pos="0.008051259662 -0.007108167229 0.115630035" mass="1.67843166" fullinertia="0.008950096072 0.009109785103 0.002130424236 7.209241995e-05 -0.0009260252905 0.0005631648847"/>
+            <joint name="joint_3" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.14 3.14" limited="true"/>
+            <geom name="link_3_visual" type="mesh" mesh="link_3" contype="0" conaffinity="0" group="1" material="jointgray"/>
+            <geom name="link_3_collision" type="mesh" mesh="link_3" group="3" rgba="0.5 0.6 0.7 0.3"/>
+            <body name="link_4" pos="0.020002 0.0297 0.19" euler="-1.5708 0 0">
+              <inertial pos="-0.01230248323 -0.07778344818 0.03260465739" mass="1.678402124" fullinertia="0.009148650296 0.002111202132 0.009322505525 -0.0009260030928 -8.654658792e-05 -0.0006686534937"/>
+              <joint name="joint_4" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.14 3.14" limited="true"/>
+              <geom name="link_4_visual" type="mesh" mesh="link_4" contype="0" conaffinity="0" group="1" material="urblue"/>
+              <geom name="link_4_collision" type="mesh" mesh="link_4" group="3" rgba="0.5 0.6 0.7 0.3"/>
+              <body name="link_5" pos="-0.019966 -0.1947 0.024952" euler="1.5708 0 0">
+                <inertial pos="-1.281852936e-07 0.006291647944 0.1142985949" mass="1.654733663" fullinertia="0.008767201966 0.008836680096 0.001942832868 1.54794339e-08 1.773652218e-08 -0.0004969161613"/>
+                <joint name="joint_5" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.14 3.14" limited="true"/>
+                <geom name="link_5_visual" type="mesh" mesh="link_5" contype="0" conaffinity="0" group="1" material="jointgray"/>
+                <geom name="link_5_collision" type="mesh" mesh="link_5" group="3" rgba="0.5 0.6 0.7 0.3"/>
+                <body name="link_6" pos="2.6809e-05 -0.0297 0.19032" euler="1.5708 0 0">
+                  <inertial pos="-0.02553005347 0.06041041027 0.05867688268" mass="1.783334073" fullinertia="0.007210337065 0.003691939381 0.007913825475 0.001846956831 0.0004879835232 -0.001226913531"/>
+                  <joint name="joint_6" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.14 3.14" limited="true"/>
+                  <geom name="link_6_visual" type="mesh" mesh="link_6" contype="0" conaffinity="0" group="1" material="urblue"/>
+                  <geom name="link_6_collision" type="mesh" mesh="link_6" group="3" rgba="0.5 0.6 0.7 0.3"/>
+                  <body name="link_7" pos="0.0147 0.11 0.073" euler="0 1.5708 1.5708">
+                    <inertial pos="-7.263636391e-05 1.716953037e-05 0.0379790808" mass="0.5807109786" fullinertia="0.0006301798988 0.0006316037531 0.0006838989933 4.907735119e-09 2.837743739e-07 -6.974942754e-08"/>
+                    <joint name="joint_7" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.14 3.14" limited="true"/>
+                    <geom name="link_7_visual" type="mesh" mesh="link_7" contype="0" conaffinity="0" group="1" material="jointgray"/>
+                    <geom name="link_7_collision" type="mesh" mesh="link_7" group="3" rgba="0.5 0.6 0.7 0.3"/>
+                    <body name="tool_link" pos="0 0 0.081">
+                      <inertial pos="0.04349784605 -4.744561468e-05 0.03364489909" mass="0.787892588" fullinertia="0.000830335702 0.0009963124001 0.0009509746819 1.005221673e-05 1.304931258e-06 5.215916772e-07"/>
+                      <geom name="tool_link_visual" type="mesh" mesh="tool_link" contype="0" conaffinity="0" group="1" material="linkgray"/>
+                      <geom name="tool_link_collision" type="mesh" mesh="tool_link" group="3" rgba="0.5 0.6 0.7 0.3"/>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="joint_1_motor" joint="joint_1" gear="1" ctrlrange="-300 300" ctrllimited="true"/>
+    <motor name="joint_2_motor" joint="joint_2" gear="1" ctrlrange="-300 300" ctrllimited="true"/>
+    <motor name="joint_3_motor" joint="joint_3" gear="1" ctrlrange="-300 300" ctrllimited="true"/>
+    <motor name="joint_4_motor" joint="joint_4" gear="1" ctrlrange="-300 300" ctrllimited="true"/>
+    <motor name="joint_5_motor" joint="joint_5" gear="1" ctrlrange="-300 300" ctrllimited="true"/>
+    <motor name="joint_6_motor" joint="joint_6" gear="1" ctrlrange="-200 200" ctrllimited="true"/>
+    <motor name="joint_7_motor" joint="joint_7" gear="1" ctrlrange="-200 200" ctrllimited="true"/>
+  </actuator>
+</mujoco>

@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="A02L-MP4-HT_defeature">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="9.54322163074319E-05 0.000606145632503457 0.0688750525869945"
+        rpy="0 0 0" />
+      <mass
+        value="2.27421807738671" />
+      <inertia
+        ixx="0.00753839230636588"
+        ixy="-6.45363839768053E-08"
+        ixz="1.08190550040789E-05"
+        iyy="0.00736348103949083"
+        iyz="-4.86386923658337E-06"
+        izz="0.00567931508554521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="2.65121978547649E-07 0.00874293096679109 0.126094808515335"
+        rpy="0 0 0" />
+      <mass
+        value="2.71452997618823" />
+      <inertia
+        ixx="0.0185167844247341"
+        ixy="2.1452690707591E-08"
+        ixz="8.3385101351351E-08"
+        iyy="0.0187945181840835"
+        iyz="-0.00139814469090032"
+        izz="0.00473099086746401" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="-0.00016498 4.6712E-05 0.1542"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="1.32320670651401E-07 0.069605040761025 0.0392576099511216"
+        rpy="0 0 0" />
+      <mass
+        value="2.1491362761356" />
+      <inertia
+        ixx="0.0132790899166167"
+        ixy="-2.55499553127496E-08"
+        ixz="5.16917988171909E-09"
+        iyy="0.00299002959228349"
+        iyz="0.000450097294780203"
+        izz="0.0136976889371151" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0.00037978 -0.0297 0.2104"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="0.00805125966153584 -0.00710816722938604 0.11563003502568"
+        rpy="0 0 0" />
+      <mass
+        value="1.67843166004397" />
+      <inertia
+        ixx="0.00895009607207795"
+        ixy="7.20924199501072E-05"
+        ixz="-0.000926025290476895"
+        iyy="0.0091097851030725"
+        iyz="0.000563164884683681"
+        izz="0.00213042423610635" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="-1.1281E-05 0.2047 0.034739"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="-0.0123024832337976 -0.0777834481794627 0.0326046573874556"
+        rpy="0 0 0" />
+      <mass
+        value="1.67840212388538" />
+      <inertia
+        ixx="0.00914865029648978"
+        ixy="-0.000926003092818068"
+        ixz="-8.65465879195015E-05"
+        iyy="0.00211120213179176"
+        iyz="-0.000668653493650447"
+        izz="0.00932250552459644" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="revolute">
+    <origin
+      xyz="0.020002 0.0297 0.19"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="link_5">
+    <inertial>
+      <origin
+        xyz="-1.28185293647894E-07 0.00629164794403702 0.114298594934797"
+        rpy="0 0 0" />
+      <mass
+        value="1.65473366343203" />
+      <inertia
+        ixx="0.00876720196621847"
+        ixy="1.54794339049766E-08"
+        ixz="1.77365221817252E-08"
+        iyy="0.00883668009551663"
+        iyz="-0.000496916161312464"
+        izz="0.00194283286816607" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5"
+    type="revolute">
+    <origin
+      xyz="-0.019966 -0.1947 0.024952"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link_4" />
+    <child
+      link="link_5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="link_6">
+    <inertial>
+      <origin
+        xyz="-0.0255300534667632 0.0604104102730547 0.0586768826801492"
+        rpy="0 0 0" />
+      <mass
+        value="1.7833340733217" />
+      <inertia
+        ixx="0.00721033706504226"
+        ixy="0.00184695683124846"
+        ixz="0.000487983523152378"
+        iyy="0.00369193938138638"
+        iyz="-0.00122691353068455"
+        izz="0.00791382547539733" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_6"
+    type="revolute">
+    <origin
+      xyz="2.6809E-05 -0.0297 0.19032"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link_5" />
+    <child
+      link="link_6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="200"
+      velocity="3" />
+  </joint>
+  <link
+    name="link_7">
+    <inertial>
+      <origin
+        xyz="-7.26363639058647E-05 1.7169530369926E-05 0.0379790808037536"
+        rpy="0 0 0" />
+      <mass
+        value="0.580710978612939" />
+      <inertia
+        ixx="0.000630179898796712"
+        ixy="4.90773511864953E-09"
+        ixz="2.83774373909452E-07"
+        iyy="0.000631603753066448"
+        iyz="-6.97494275415876E-08"
+        izz="0.000683898993289474" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/link_7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_7"
+    type="revolute">
+    <origin
+      xyz="0.0147 0.11 0.073"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="link_6" />
+    <child
+      link="link_7" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="200"
+      velocity="3" />
+  </joint>
+  <link
+    name="tool_link">
+    <inertial>
+      <origin
+        xyz="0.0434978460537863 -4.74456146839913E-05 0.0336448990949839"
+        rpy="0 0 0" />
+      <mass
+        value="0.787892588002377" />
+      <inertia
+        ixx="0.000830335701968103"
+        ixy="1.00522167301468E-05"
+        ixz="1.30493125753733E-06"
+        iyy="0.000996312400094622"
+        iyz="5.21591677150424E-07"
+        izz="0.000950974681898122" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/tool_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://A02L-MP4-HT_defeature/meshes/tool_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_8"
+    type="fixed">
+    <origin
+      xyz="0 0 0.081"
+      rpy="0 0 0" />
+    <parent
+      link="link_7" />
+    <child
+      link="tool_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

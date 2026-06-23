@@ -1,0 +1,21 @@
+[project]
+name = "a02l-mp4-ht-defeature"
+version = "0.1.0"
+description = "CSV -> MuJoCo MJCF converter and loader for the A02L-MP4-HT robot arm."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "huanglili" }]
+dependencies = [
+    "mujoco>=3.2",
+    "numpy>=1.24",
+]
+
+# Optional: install with `uv sync --extra render` to enable offscreen image
+# rendering in load_model.py (--render-image).
+[project.optional-dependencies]
+render = ["pillow>=10.0"]
+
+# Mark this project as a "non-packaged" workspace: uv will manage the venv
+# and dependencies but will NOT try to build/install the project itself.
+[tool.uv]
+package = false
