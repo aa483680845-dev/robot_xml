@@ -28,10 +28,10 @@
     <body name="base_link" pos="0 0 0">
       <inertial pos="9.543221631e-05 0.0006061456325 0.06887505259" mass="2.274218077" fullinertia="0.007538392306 0.007363481039 0.005679315086 -6.453638398e-08 1.0819055e-05 -4.863869237e-06"/>
       <geom name="base_link_visual" type="mesh" mesh="base_link" contype="0" conaffinity="0" group="1" material="linkgray"/>
-      <geom name="base_link_collision" type="mesh" mesh="base_link" group="3" rgba="0.5 0.6 0.7 0.3"/>
+      <geom name="base_link_collision" type="mesh" mesh="base_link" group="3" rgba="0.5 0.6 0.7 0.3" contype="0" conaffinity="0"/>
       <body name="link_1" pos="-0.00016498 4.6712e-05 0.1542">
         <inertial pos="2.651219785e-07 0.008742930967 0.1260948085" mass="2.714529976" fullinertia="0.01851678442 0.01879451818 0.004730990867 2.145269071e-08 8.338510135e-08 -0.001398144691"/>
-        <joint name="joint_1" type="hinge" pos="0 0 0" axis="0 0 -1" range="-3.14 3.14" limited="true"/>
+        <joint name="joint_1" type="hinge" pos="0 0 0" axis="0 0 -1" range="-3.14 3.14" limited="true" damping="0.01" frictionloss="0"/>
         <geom name="link_1_visual" type="mesh" mesh="link_1" contype="0" conaffinity="0" group="1" material="urblue"/>
         <geom name="link_1_collision" type="mesh" mesh="link_1" group="3" rgba="0.5 0.6 0.7 0.3"/>
         <body name="link_2" pos="0.00037978 -0.0297 0.2104" euler="1.5708 0 0">
@@ -79,12 +79,12 @@
     </body>
   </worldbody>
   <actuator>
-    <motor name="joint_1_motor" joint="joint_1" gear="1" ctrlrange="-300 300" ctrllimited="true"/>
-    <motor name="joint_2_motor" joint="joint_2" gear="1" ctrlrange="-300 300" ctrllimited="true"/>
-    <motor name="joint_3_motor" joint="joint_3" gear="1" ctrlrange="-300 300" ctrllimited="true"/>
-    <motor name="joint_4_motor" joint="joint_4" gear="1" ctrlrange="-300 300" ctrllimited="true"/>
-    <motor name="joint_5_motor" joint="joint_5" gear="1" ctrlrange="-300 300" ctrllimited="true"/>
-    <motor name="joint_6_motor" joint="joint_6" gear="1" ctrlrange="-200 200" ctrllimited="true"/>
-    <motor name="joint_7_motor" joint="joint_7" gear="1" ctrlrange="-200 200" ctrllimited="true"/>
+    <position name="joint_1_pd" joint="joint_1" kp="500" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+    <position name="joint_2_pd" joint="joint_2" kp="700" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+    <position name="joint_3_pd" joint="joint_3" kp="700" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+    <position name="joint_4_pd" joint="joint_4" kp="700" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+    <position name="joint_5_pd" joint="joint_5" kp="300" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+    <position name="joint_6_pd" joint="joint_6" kp="100" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+    <position name="joint_7_pd" joint="joint_7" kp="100" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
   </actuator>
 </mujoco>
