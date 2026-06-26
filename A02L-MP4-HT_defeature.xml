@@ -6,8 +6,8 @@
     <joint damping="0.1" armature="0.01"/>
     <geom contype="1" conaffinity="1"/>
   </default>
-  <asset>
 
+  <asset>
     <material name="black"     rgba="0.033 0.033 0.033 1" specular="0.1" shininess="0.1" reflectance="0"/>
     <material name="jointgray" rgba="0.278 0.278 0.278 1" specular="0.1" shininess="0.1" reflectance="0"/>
     <material name="linkgray"  rgba="0.72 0.72 0.72 1"   specular="0.15" shininess="0.12" reflectance="0"/>
@@ -23,6 +23,7 @@
     <mesh name="link_7" file="link_7.STL"/>
     <mesh name="tool_link" file="tool_link.STL"/>
   </asset>
+
   <worldbody>
     <light pos="0 0 3" dir="0 0 -1" diffuse="0.8 0.8 0.8"/>
     <body name="base_link" pos="0 0 0">
@@ -68,6 +69,10 @@
                       <inertial pos="0.04349784605 -4.744561468e-05 0.03364489909" mass="0.787892588" fullinertia="0.000830335702 0.0009963124001 0.0009509746819 1.005221673e-05 1.304931258e-06 5.215916772e-07"/>
                       <geom name="tool_link_visual" type="mesh" mesh="tool_link" contype="0" conaffinity="0" group="1" material="linkgray"/>
                       <geom name="tool_link_collision" type="mesh" mesh="tool_link" group="3" rgba="0.5 0.6 0.7 0.3"/>
+                      <site name="end_effector"   pos="0 0 0.20" size="0.005"                                 rgba="1 1 0 1" group="2"/>
+                      <site name="end_effector_x" type="cylinder" fromto="0 0 0.20  0.05 0 0.20" size="0.003" rgba="1 0 0 1" group="2"/>
+                      <site name="end_effector_y" type="cylinder" fromto="0 0 0.20  0 0.05 0.20" size="0.003" rgba="0 1 0 1" group="2"/>
+                      <site name="end_effector_z" type="cylinder" fromto="0 0 0.20  0 0 0.25"    size="0.003" rgba="0 0 1 1" group="2"/>
                     </body>
                   </body>
                 </body>
@@ -80,11 +85,11 @@
   </worldbody>
   <actuator>
     <position name="joint_1_pd" joint="joint_1" kp="500" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
-    <position name="joint_2_pd" joint="joint_2" kp="700" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
-    <position name="joint_3_pd" joint="joint_3" kp="700" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
-    <position name="joint_4_pd" joint="joint_4" kp="700" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
-    <position name="joint_5_pd" joint="joint_5" kp="300" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
-    <position name="joint_6_pd" joint="joint_6" kp="100" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+    <position name="joint_2_pd" joint="joint_2" kp="700" dampratio="0.3" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+    <position name="joint_3_pd" joint="joint_3" kp="700" dampratio="0.3" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+    <position name="joint_4_pd" joint="joint_4" kp="700" dampratio="0.3" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+    <position name="joint_5_pd" joint="joint_5" kp="300" dampratio="0.3" ctrlrange="-3.14 3.14" ctrllimited="true"/>
+    <position name="joint_6_pd" joint="joint_6" kp="100" dampratio="0.3" ctrlrange="-3.14 3.14" ctrllimited="true"/>
     <position name="joint_7_pd" joint="joint_7" kp="100" dampratio="1" ctrlrange="-3.14 3.14" ctrllimited="true"/>
   </actuator>
 </mujoco>

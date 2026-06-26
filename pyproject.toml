@@ -8,6 +8,9 @@ authors = [{ name = "huanglili" }]
 dependencies = [
     "mujoco>=3.2",
     "numpy>=1.24",
+    "pin>=4.0",
+    "ruckig>=0.17",
+    "jupyterlab>=4.6",
 ]
 
 # Optional: install with `uv sync --extra render` to enable offscreen image
