@@ -36,6 +36,7 @@ class MujocoBackend:
             jerk=np.asarray(jerk_limits, dtype=float),
         )
         self._validate_joint_alignment()
+        self._validate_actuator_kind()
         mujoco.mj_forward(self.model, self.data)
 
     def _id_for_name(self, object_type: mujoco._enums.mjtObj, name: str) -> int:
@@ -54,6 +55,21 @@ class MujocoBackend:
                 raise ValueError(
                     f"Actuator {self.actuator_names[index]!r} drives {actuator_joint_name!r}, "
                     f"expected {expected_joint!r}."
+                )
+
+    def _validate_actuator_kind(self) -> None:
+        # set_position_target() writes the joint target into data.ctrl, which is
+        # only the correct semantics for MJCF <position> actuators (affine bias
+        # with a non-zero position gain). Reject <motor>/<velocity>/general so a
+        # mis-modelled scene fails loudly instead of running with wrong control.
+        for index, actuator_id in enumerate(self._actuator_ids):
+            biastype = int(self.model.actuator_biastype[actuator_id])
+            position_gain = float(self.model.actuator_biasprm[actuator_id, 1])
+            if biastype != int(mujoco.mjtBias.mjBIAS_AFFINE) or position_gain == 0.0:
+                raise ValueError(
+                    f"Actuator {self.actuator_names[index]!r} is not a <position> actuator "
+                    f"(biastype={biastype}, position_gain={position_gain}). "
+                    "MujocoBackend only supports position-controlled actuators."
                 )
 
     def get_state(self) -> RobotState:
